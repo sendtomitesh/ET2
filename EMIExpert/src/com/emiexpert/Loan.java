@@ -18,11 +18,13 @@ public class Loan {
 		this.mLoanInterest = interest;
 		this.mLoanDuration = duration;
 		mEmiMonths = new ArrayList<EmiMonth>();
+		mPartPayments= new ArrayList<PartPayment>();
 		setInterestComponent();
 		setCurrEMI();
 		generateEmis();
 	}
 
+	
 	public double getmLoanInterest() {
 		return mLoanInterest;
 	}
@@ -78,7 +80,7 @@ public class Loan {
 				emiMonth= new EmiMonth(openingBal, currEMI);
 				openingBal = emiMonth.getClosingPrinciple();
 				mEmiMonths.set(i, emiMonth);
-			}
+			} 
 		}
 		else if(partPayment.getPaymentType() == PartPaymentType.LESS_EMI)
 		{

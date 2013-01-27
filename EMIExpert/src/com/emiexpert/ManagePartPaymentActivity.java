@@ -1,5 +1,7 @@
 package com.emiexpert;
 
+import com.emiexpert.PartPayment.PartPaymentType;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +28,8 @@ ListView lv;
 	
 	public void LoadLists()
 	{
+		PartPayment p = new PartPayment(4, 50.00, PartPaymentType.LESS_DURATION);
+		MainActivity.mLoan.addPartPayment(p);
 		if(MainActivity.mLoan.getAllEmis().size()>0)
 		{
 		lv.setAdapter(new EMIAdapter(getApplicationContext(), MainActivity.mLoan.getAllEmis()));
