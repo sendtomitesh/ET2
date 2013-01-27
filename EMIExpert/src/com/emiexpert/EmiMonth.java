@@ -19,22 +19,23 @@ public class EmiMonth {
 	
 	//getters
 	public double getOpeningBal(){
-		return mOpeningBal;
+		return Utility.getRoundOfDouble(mOpeningBal);
 	}
 	
 	public double getInterest(){
-		return mInterest;
+		
+		return Utility.getRoundOfDouble(mInterest);
 	}
 	
 	public double getPrinciple(){
-		return mPrinciple;
+		return Utility.getRoundOfDouble(mPrinciple);
 	}
 	public double getEmi()
 	{
-		return mEmi;
+		return Utility.getRoundOfDouble(mEmi);
 	}
 	public double getClosingPrinciple(){
-		return (mOpeningBal - mPrinciple);
+		return Utility.getRoundOfDouble((mOpeningBal - mPrinciple)) ;
 	}	
 	public void calInterest(){
 		
