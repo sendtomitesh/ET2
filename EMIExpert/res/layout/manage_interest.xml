@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:padding="20dp" >
+
+        <Button
+            android:id="@+id/btnreset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="reset"
+            android:text="Reset" />
+
+        <Button
+            android:id="@+id/btnemailpayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnReset"
+            android:layout_alignBottom="@+id/btnReset"
+            android:layout_alignRight="@+id/btnPartPayment"
+            android:text="Email Payment Chart" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvEMI"
+            android:layout_alignParentTop="true"
+            android:text="Interest"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/SeekBarEMI"
+            android:layout_below="@+id/textView3"
+            android:text="Current Interest" />
+
+        <TextView
+            android:id="@+id/tvNewInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/textView1"
+            android:text="Rs.XXXX"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_toRightOf="@+id/tvPeriods"
+            android:text="New Interest" />
+
+        <TextView
+            android:id="@+id/tvSavedInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNewInterest"
+            android:layout_centerHorizontal="true"
+            android:text="You Save Rs.YYYY"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvCurInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvSavedInterest"
+            android:layout_alignLeft="@+id/textView1"
+            android:text="Rs.XXXX"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvEmiorPeriods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/tvNewInterest"
+            android:layout_below="@+id/tvSavedInterest"
+            android:layout_marginTop="15dp"
+            android:text="Adust EMI or Duration" />
+
+        <SeekBar
+            android:id="@+id/SeekBarEMI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnReset"
+            android:layout_below="@+id/tvEMI"
+            android:max="100"
+            android:progress="5" />
+
+        <TextView
+            android:id="@+id/tvEMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmiorPeriods"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@+id/tvCurInterest"
+            android:text="Adust EMI" />
+
+        <SeekBar
+            android:id="@+id/SeekBarPeriods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/SeekBarEMI"
+            android:layout_below="@+id/tvPeriods"
+            android:max="360"
+            android:progress="25" />
+
+        <TextView
+            android:id="@+id/tvPeriods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvEMI"
+            android:layout_below="@+id/SeekBarEMI"
+            android:text="Adust Periods" />
+
+        <Button
+            android:id="@+id/btnPartPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/SeekBarPeriods"
+            android:onClick="addPartpayment"
+            android:text="Try Add Partpayment" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

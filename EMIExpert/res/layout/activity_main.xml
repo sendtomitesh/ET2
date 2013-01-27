@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:padding="20dp" >
+
+        <EditText
+            android:id="@+id/text_principle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numeric="decimal"
+            android:hint="Principle" />
+
+        <EditText
+            android:id="@+id/text_interest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_principle"
+            android:numeric="decimal"
+            android:hint="Interest rate" />
+
+        <EditText
+            android:id="@+id/text_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_interest"
+            android:numeric="integer"
+            android:hint="Duration(Months)" />
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_duration"
+            android:onClick="reset"
+            android:text="Reset" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_duration"
+            android:layout_toRightOf="@+id/btn_reset"
+            android:onClick="calculateInterest"
+            android:text="Go" />
+        
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_reset"
+            android:layout_marginTop="20dp"
+            android:text="You pay XXXX.Rs of Interest" />
+         
+         <Button
+        android:id="@+id/btnActSmart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Act Smart Now"
+        android:onClick="manageInterest" />
+
+        
+    </RelativeLayout>
+
+   </RelativeLayout>
