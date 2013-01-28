@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
 			double principle = Double.parseDouble(textPrinciple.getText().toString());
 			double interest = Double.parseDouble(textInterest.getText().toString());
 			mLoan = new Loan(principle, interest, duration);
+			
 			textResult.setText("You pay " + String.valueOf(mLoan.getTotalInterest())
 					+ ".Rs of Interest");
 		}
