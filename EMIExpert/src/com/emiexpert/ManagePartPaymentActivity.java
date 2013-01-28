@@ -28,7 +28,7 @@ ListView lv;
 	
 	public void LoadLists()
 	{
-		PartPayment p = new PartPayment(4, 50.00, PartPaymentType.LESS_DURATION);
+		PartPayment p = new PartPayment(12, 100000.00, PartPaymentType.LESS_EMI);
 		MainActivity.mLoan.addPartPayment(p);
 		if(MainActivity.mLoan.getAllEmis().size()>0)
 		{

@@ -93,8 +93,9 @@
             android:id="@+id/btnPartPayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/SeekBarPeriods"
+            android:layout_alignBaseline="@+id/tvSavedInterest"
+            android:layout_alignBottom="@+id/tvSavedInterest"
+            android:layout_alignParentLeft="true"
             android:onClick="addPartpayment"
             android:text="@string/partpayment" 
             style="@style/btnsmall"/>

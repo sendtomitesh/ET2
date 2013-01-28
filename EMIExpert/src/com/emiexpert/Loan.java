@@ -50,6 +50,17 @@ public class Loan {
 
 				
 	}
+	public void setCurrEMIForLessEMI(int NoOfmonths)
+	{
+		double divider = 1200;
+		double emi = 0;
+		double i = mLoanInterest / divider;
+			emi = mLoanPrinciple * i * Math.pow(1 + i, NoOfmonths)
+					/ (Math.pow(1 + i, NoOfmonths) - 1);
+		 
+		currEMI= Utility.getRoundOfDouble(emi);
+
+	}
 	public double getEMI(int month) {
 		double divider = 1200;
 		double emi = 0;
@@ -63,6 +74,7 @@ public class Loan {
 		}
 		return Utility.getRoundOfDouble(emi);
 	}
+
 
 	public void initalizePartPayment() {
 		mPartPayments = new ArrayList<PartPayment>();
@@ -86,8 +98,9 @@ public class Loan {
 		{
 			//set values here
 			
-			double openingBal= mLoanPrinciple=mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount();
-			setCurrEMI();
+			double openingBal=mLoanPrinciple=mEmiMonths.get(partPayment.getMonth()-1).getClosingPrinciple()-partPayment.getAmount();
+			setCurrEMIForLessEMI(mLoanDuration-partPayment.getMonth());
+		//	double openingBal= mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount();
 			EmiMonth emiMonth;
 			for(int i= partPayment.getMonth()-1;i<mLoanDuration;i++)
 			{
