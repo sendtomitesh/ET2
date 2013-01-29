@@ -6,14 +6,14 @@ import com.emiexpert.PartPayment.PartPaymentType;
 
 public class Loan {
 	private double mLoanInterest;
-	private double mLoanPrinciple;
+	private long mLoanPrinciple;
 	private int mLoanDuration;
 	private ArrayList<EmiMonth> mEmiMonths;
 	private ArrayList<PartPayment> mPartPayments = null;
-	private double currEMI;
+	private long currEMI;
 	public static double sInterestComponent;
 
-	public Loan(double principle, double interest, int duration) {
+	public Loan(long principle, double interest, int duration) {
 		this.mLoanPrinciple = principle;
 		this.mLoanInterest = interest;
 		this.mLoanDuration = duration;
@@ -29,7 +29,7 @@ public class Loan {
 		return mLoanInterest;
 	}
 
-	public double getmLoanPrinciple() {
+	public long getmLoanPrinciple() {
 		return mLoanPrinciple;
 	}
 
@@ -61,7 +61,7 @@ public class Loan {
 		currEMI= Utility.getRoundOfDouble(emi);
 
 	}
-	public double getEMI(int month) {
+	public long getEMI(int month) {
 		double divider = 1200;
 		double emi = 0;
 		double i = mLoanInterest / divider;
@@ -85,7 +85,7 @@ public class Loan {
 		{
 			//set values here
 			EmiMonth emiMonth;
-			double openingBal= mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount(); 
+			long openingBal=Utility.getRoundOfDouble(mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount()) ; 
 			for(int i= partPayment.getMonth()-1;i<mLoanDuration;i++)
 			{
 				
@@ -98,7 +98,7 @@ public class Loan {
 		{
 			//set values here
 			
-			double openingBal=mLoanPrinciple=mEmiMonths.get(partPayment.getMonth()-1).getClosingPrinciple()-partPayment.getAmount();
+			long openingBal=mLoanPrinciple=Utility.getRoundOfDouble(mEmiMonths.get(partPayment.getMonth()-1).getClosingPrinciple()-partPayment.getAmount()) ;
 			setCurrEMIForLessEMI(mLoanDuration-partPayment.getMonth());
 		//	double openingBal= mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount();
 			EmiMonth emiMonth;
@@ -116,7 +116,7 @@ public class Loan {
 
 	public void generateEmis() {
 		EmiMonth emiMonth;
-		double openingBal = mLoanPrinciple;
+		long openingBal = mLoanPrinciple;
 
 		for (int i = 0; i < mLoanDuration; i++) {
 			emiMonth = new EmiMonth(openingBal, currEMI);
@@ -141,13 +141,13 @@ public class Loan {
 		}
 	}
 
-	public double getTotalInterest() {
+	public long getTotalInterest() {
 		double totalPaid = 0.0;
 		for (int i = 0; i < mEmiMonths.size(); i++) {
 			totalPaid += Utility.getRoundOfDouble(mEmiMonths.get(i)
 					.getInterest());
 		}
-		return totalPaid;
+		return Utility.getRoundOfDouble(totalPaid);
 	}
 
 }

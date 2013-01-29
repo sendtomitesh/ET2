@@ -15,7 +15,7 @@
             android:id="@+id/text_principle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/principle"            
+            android:hint="@string/principle"
             android:inputType="numberDecimal" >
 
             <requestFocus />
@@ -25,10 +25,10 @@
             android:id="@+id/text_interest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/button1"
             android:layout_below="@+id/text_principle"
             android:hint="@string/interest"
-            android:inputType="numberDecimal" 
-            />
+            android:inputType="numberDecimal" />
 
         <EditText
             android:id="@+id/text_duration"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_interest"
             android:hint="@string/duration"
-            android:inputType="number"/>
+            android:inputType="number" />
 
         <Button
             android:id="@+id/btn_reset"
@@ -55,8 +55,8 @@
             android:layout_marginLeft="5dip"
             android:layout_toRightOf="@+id/btn_reset"
             android:onClick="calculateInterest"
-            android:text="@string/go"               
-            />
+            android:text="@string/go" />
+
         <TextView
             android:id="@+id/text_result"
             android:layout_width="wrap_content"
@@ -67,14 +67,13 @@
 
         <Button
             android:id="@+id/btnActSmart"
+            style="@style/btnsmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:onClick="manageInterest"
-            android:text="@string/act"
-            style="@style/btnsmall" 
-            />
+            android:text="@string/act" />
     </RelativeLayout>
 
    </RelativeLayout>

@@ -4,12 +4,12 @@ package com.emiexpert;
 
 public class EmiMonth {
 	
-	private double mOpeningBal;
-	private double mInterest;
-	private double mPrinciple;
-	private double mEmi;
+	private long mOpeningBal;
+	private long mInterest;
+	private long mPrinciple;
+	private long mEmi;
 	
-	public EmiMonth(double openingBal,double emi) {
+	public EmiMonth(long openingBal,long emi) {
 		// TODO Auto-generated constructor stub
 		this.mOpeningBal = openingBal;
 		this.mEmi = emi;
@@ -18,23 +18,23 @@ public class EmiMonth {
 	}
 	
 	//getters
-	public double getOpeningBal(){
+	public long getOpeningBal(){
 		return Utility.getRoundOfDouble(mOpeningBal);
 	}
 	
-	public double getInterest(){
+	public long getInterest(){
 		
 		return Utility.getRoundOfDouble(mInterest);
 	}
 	
-	public double getPrinciple(){
+	public long getPrinciple(){
 		return Utility.getRoundOfDouble(mPrinciple);
 	}
-	public double getEmi()
+	public long getEmi()
 	{
 		return Utility.getRoundOfDouble(mEmi);
 	}
-	public double getClosingPrinciple(){
+	public long getClosingPrinciple(){
 		return Utility.getRoundOfDouble((mOpeningBal - mPrinciple)) ;
 	}	
 	public void calInterest(){

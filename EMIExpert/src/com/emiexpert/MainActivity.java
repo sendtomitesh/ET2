@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
 		if (textDuration.getText().toString() != "" && textInterest.getText().toString() != "" && textPrinciple.getText().toString() != "")
 		{
 			int duration = Integer.parseInt(textDuration.getText().toString());
-			double principle = Double.parseDouble(textPrinciple.getText().toString());
+			long principle = Long.parseLong(textPrinciple.getText().toString());
 			double interest = Double.parseDouble(textInterest.getText().toString());
 			mLoan = new Loan(principle, interest, duration);
 			
