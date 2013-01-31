@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -41,6 +42,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void reset(View v) {
+		Toast.makeText(getApplicationContext(), Utility.logOfBase(123, 10)+"", Toast.LENGTH_LONG).show();
 		textResult.setText("");
 		textDuration.setText("");
 		textInterest.setText("");

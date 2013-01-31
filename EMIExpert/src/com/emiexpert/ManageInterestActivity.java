@@ -18,52 +18,72 @@ public class ManageInterestActivity extends Activity {
 TextView tvCurInterest,tvNewInterest,tvEMI,tvPeriods;
 SeekBar seekBarEMI,seekBarPeriods;
 Button btnPartpayment,btnReset,btnEmailPaymentChart;
+Loan adjustedLoan;
+boolean changingEMI=false;
+boolean changingDuration=false;
 
-Loan tLoan;
+
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.manage_interest);
+		adjustedLoan = MainActivity.mLoan;
 		initializeGlobals();
 		
+		setSeekbars();
+		
+	}
+	private void setSeekbars() {
+		// TODO Auto-generated method stub
+		seekBarEMI.setProgress((int)adjustedLoan.getCurrEMI());
+		tvEMI.setText("EMI :" + adjustedLoan.getCurrEMI());
 		seekBarEMI.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				
+				changingEMI=false;
 			}
 			
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				
+				changingEMI=true;
 			}
 			
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress,
 					boolean fromUser) {
 				// TODO Auto-generated method stub
-				progress=progress*5;
-				tvEMI.setText("EMI :" + progress);
+				//progress=progress*5;
 				
+				tvEMI.setText("EMI :" + progress);
+				if(!changingDuration)
+				{
+				adjustedLoan.setNewEMI(progress);
+				tvPeriods.setText("Periods :" + adjustedLoan.getCurrDuration());
+				//seekBarPeriods.setProgress(adjustedLoan.getmLoanDuration());
+				}
+				//
 			}
 		});
 		
+		tvPeriods.setText("Periods :" + adjustedLoan.getCurrDuration());
+		seekBarPeriods.setProgress(adjustedLoan.getmLoanDuration());
 		seekBarPeriods.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				
+				changingDuration=false;
 			}
 			
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				
+				changingDuration=true;
 			}
 			
 			@Override
@@ -71,7 +91,12 @@ Loan tLoan;
 					boolean fromUser) {
 				
 				tvPeriods.setText("Periods :" + progress);
-				
+				if(!changingEMI)
+				{
+				adjustedLoan.setNewDuration(progress);
+				tvEMI.setText("EMI :" + adjustedLoan.getCurrEMI());
+				seekBarEMI.setProgress((int)adjustedLoan.getCurrEMI());
+				}
 			}
 		});
 	}
@@ -82,6 +107,8 @@ Loan tLoan;
 		tvEMI=(TextView)findViewById(R.id.tvEMI);
 		tvPeriods=(TextView)findViewById(R.id.tvPeriods);
 		seekBarEMI=(SeekBar)findViewById(R.id.SeekBarEMI);
+		seekBarEMI.setMax((int)adjustedLoan.getmLoanPrinciple()/5);
+	
 		seekBarPeriods=(SeekBar)findViewById(R.id.SeekBarPeriods);		
 	}
 	
