@@ -4,66 +4,19 @@
     android:layout_height="match_parent" >
 
     <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <!-- Header -->
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#ffffff"
+        android:background="#d9d9d9"
         android:padding="20dp" >
-
-        <EditText
-            android:id="@+id/text_principle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/principle"
-            android:inputType="numberDecimal" >
-
-            <requestFocus />
-        </EditText>
-
-        <EditText
-            android:id="@+id/text_interest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/button1"
-            android:layout_below="@+id/text_principle"
-            android:hint="@string/interest"
-            android:inputType="numberDecimal" />
-
-        <EditText
-            android:id="@+id/text_duration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_interest"
-            android:hint="@string/duration"
-            android:inputType="number" />
-
-        <Button
-            android:id="@+id/btn_reset"
-            style="@style/btnsmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_duration"
-            android:onClick="reset"
-            android:text="@string/reset" />
-
-        <Button
-            style="@style/btnsmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_duration"
-            android:layout_marginLeft="5dip"
-            android:layout_toRightOf="@+id/btn_reset"
-            android:onClick="calculateInterest"
-            android:text="@string/go" />
-
-        <TextView
-            android:id="@+id/text_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_reset"
-            android:layout_marginTop="20dp"
-            android:text="@string/interestamt" />
 
         <Button
             android:id="@+id/btnActSmart"
@@ -74,6 +27,95 @@
             android:layout_alignParentRight="true"
             android:onClick="manageInterest"
             android:text="@string/act" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/principle" />
+
+        
+
+        <EditText android:id="@+id/text_principle" 
+            style="@style/txtblue"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" 
+            android:layout_centerHorizontal="true" 
+            android:layout_below="@+id/textView1" 
+            android:ems="10" 
+            android:inputType="numberDecimal">
+
+            <requestFocus />
+        </EditText>
+        <EditText
+            android:id="@+id/text_duration"  
+            style="@style/txtblue"        
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView02"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView02"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/text_principle"
+            android:text="@string/interest" />
+
+        <EditText
+            android:id="@+id/text_interest"
+            style="@style/txtblue"           
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/TextView01"
+            android:layout_below="@+id/TextView01"
+            android:ems="10"            
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/text_principle"
+            android:text="@string/duration" />
+
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="@string/interestamt" />
+
+        <Button
+            android:id="@+id/btn_reset"
+            style="@style/btnorange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/text_interest"
+            android:layout_centerVertical="true"
+            android:onClick="reset"
+            android:text="@string/reset" />
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/btnsmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="calculateInterest"
+            android:text="@string/go" />
+
     </RelativeLayout>
 
    </RelativeLayout>
