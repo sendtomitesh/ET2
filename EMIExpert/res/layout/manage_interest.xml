@@ -9,72 +9,49 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="#ffffff"
+        android:orientation="vertical"
         android:padding="20dp" >
 
-          <TextView
+        <TextView
             android:id="@+id/textView3"
+            style="@style/textheader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:text="@string/interest"
-            style="@style/textheader"
-            android:textAppearance="?android:attr/textAppearanceLarge" 
-             />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"            
-            android:text="@string/currentinterest" 
-            android:layout_marginTop="20dip"
-            style="@style/textsmall"
-            />          
-          
-        <Button
-            android:id="@+id/btnreset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:onClick="reset"
-            android:text="@string/reset"
-            style="@style/btnsmall"
-            />
-
-
-
-        <TextView
-            android:id="@+id/tvNewInterest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2"
-            android:layout_alignParentRight="true"
-            android:text="@string/rs"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView1"
+            style="@style/textsmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
+            android:text="@string/currentinterest" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/textsmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="@string/newinterest"
-            style="@style/textsmall" />
+            android:layout_marginTop="20dip"
+            android:text="@string/newinterest" />
 
         <TextView
             android:id="@+id/tvSavedInterest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@string/rssaved"
             android:layout_marginTop="70dip"
+            android:text="@string/rssaved"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/tvCurInterest"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"           
+            android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
             android:text="@string/rs"
             android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -91,24 +68,13 @@
 
         <Button
             android:id="@+id/btnPartPayment"
+            style="@style/btnsmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tvSavedInterest"
-            android:layout_alignBottom="@+id/tvSavedInterest"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/SeekBarPeriods"
             android:onClick="addPartpayment"
-            android:text="@string/partpayment" 
-            style="@style/btnsmall"/>
-
-        <Button
-            android:id="@+id/btnemailpayment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/btnreset"
-            android:layout_alignBottom="@+id/btnreset"
-            android:layout_alignLeft="@+id/btnPartPayment"
-            android:text="@string/emailchart"
-            style="@style/btnsmall" />
+            android:text="@string/partpayment" />
 
         <SeekBar
             android:id="@+id/SeekBarEMI"
@@ -127,27 +93,56 @@
             android:layout_below="@+id/tvSavedInterest"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:text="@string/emiorperiod"
-             />
+            android:text="@string/emiorperiod" />
 
         <TextView
             android:id="@+id/tvPeriods"
+            style="@style/textsmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/SeekBarEMI"
             android:layout_centerHorizontal="true"
-            android:text="@string/period"
-            style="@style/textsmall" />
+            android:text="@string/period" />
 
         <TextView
             android:id="@+id/tvEMI"
+            style="@style/textsmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvEmiorPeriods"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="@string/emi"
-            style="@style/textsmall" />
+            android:text="@string/emi" />
+
+        <Button
+            android:id="@+id/btnreset"
+            style="@style/btnsmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/SeekBarPeriods"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="14dp"
+            android:onClick="reset"
+            android:text="@string/reset" />
+
+        <Button
+            android:id="@+id/btnemailpayment"
+            style="@style/btnsmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnPartPayment"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:text="@string/emailchart" />
+
+        <TextView
+            android:id="@+id/tvNewInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/btnemailpayment"
+            android:layout_below="@+id/textView2"
+            android:text="@string/rs"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>
 
