@@ -2,6 +2,8 @@ package com.emiexpert;
 
 import java.util.ArrayList;
 
+import android.util.Log;
+
 import com.emiexpert.PartPayment.PartPaymentType;
 
 public class Loan {
@@ -124,7 +126,35 @@ public class Loan {
 			mEmiMonths.add(emiMonth);
 		}
 	}
+	public long getCurrEMI()
+	{
+		return currEMI;
+	}
+	public long getCurrDuration()
+	{
+		return mLoanDuration;
+	}
 
+	public void setNewEMI(long newEMI)
+	{
+		// set new EMI here
+		mLoanDuration= (int) Utility.logOfBase(Utility.getRoundOfDouble(newEMI/(newEMI-mLoanPrinciple*sInterestComponent)),Utility.getRoundOfDouble(sInterestComponent+1) );
+		mEmiMonths = new ArrayList<EmiMonth>();
+		mPartPayments= new ArrayList<PartPayment>();
+		setCurrEMI();
+		generateEmis();
+	}
+	public void setNewDuration(int newMonths)
+	{
+		//set new duration here
+		this.mLoanDuration = newMonths;
+		mEmiMonths = new ArrayList<EmiMonth>();
+		mPartPayments= new ArrayList<PartPayment>();
+		
+		setCurrEMI();
+		generateEmis();
+	}
+	
 	public void setInterestComponent() {
 		sInterestComponent = mLoanInterest / 1200.00;
 	}

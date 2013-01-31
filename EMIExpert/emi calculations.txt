@@ -1,0 +1,13 @@
+Ok I am back with the formulas for you. Lets say there is a loan, Principal (P = 10lac), rate (11.50% ; i=11.5/12 = .96%) and we have the EMI constant
+
+For example I set the EMI (E) to 25000. The formula for duration (n) will be :
+
+n = log [E/(E - P*i)] base (1+i)
+
+So a log of [E/(E - P*i)] to the base (1+i). Once you get the duration, you can use the existing formula to calculate the total interest amount. Please note to make the principal to the lowest round number. For example in above case, the value of "n" will be 50.685, so use only 50 as the duration value.
+
+On the other hand I think it will be fairly easy to find EMI value if duration is updated and Principal and interest remain constant.
+
+Hope it helps. Please let me know if you need further explanation.
+
+-Abhi
