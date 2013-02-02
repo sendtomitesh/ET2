@@ -11,16 +11,18 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Toast;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 public class ManageInterestActivity extends Activity {
-TextView tvCurInterest,tvNewInterest,tvEMI,tvPeriods;
+TextView tvCurInterest,tvNewInterest,tvEMI,tvPeriods,tvSaving;
 SeekBar seekBarEMI,seekBarPeriods;
 Button btnPartpayment,btnReset,btnEmailPaymentChart;
 Loan adjustedLoan;
 boolean changingEMI=false;
 boolean changingDuration=false;
+long saving=0;
 
 
 
@@ -29,7 +31,14 @@ boolean changingDuration=false;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.manage_interest);
-		adjustedLoan = MainActivity.mLoan;
+		
+		//copying object to new object
+		try {
+			adjustedLoan = (Loan) MainActivity.mLoan.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		initializeGlobals();
 		
 		setSeekbars();
@@ -57,16 +66,16 @@ boolean changingDuration=false;
 			public void onProgressChanged(SeekBar seekBar, int progress,
 					boolean fromUser) {
 				// TODO Auto-generated method stub
-				//progress=progress*5;
-				
 				tvEMI.setText("EMI :" + progress);
 				if(!changingDuration)
 				{
 				adjustedLoan.setNewEMI(progress);
-				tvPeriods.setText("Periods :" + adjustedLoan.getCurrDuration());
-				//seekBarPeriods.setProgress(adjustedLoan.getmLoanDuration());
+				tvPeriods.setText("duration :" + adjustedLoan.getCurrDuration());
+				seekBarPeriods.setProgress(adjustedLoan.getmLoanDuration());
+				tvNewInterest.setText("Rs."+ adjustedLoan.getTotalInterest());
+				tvSaving.setText("You Saved Rs."+getSaving());
 				}
-				//
+				
 			}
 		});
 		
@@ -96,6 +105,8 @@ boolean changingDuration=false;
 				adjustedLoan.setNewDuration(progress);
 				tvEMI.setText("EMI :" + adjustedLoan.getCurrEMI());
 				seekBarEMI.setProgress((int)adjustedLoan.getCurrEMI());
+				tvNewInterest.setText("Rs."+ adjustedLoan.getTotalInterest());
+				tvSaving.setText("You Saved Rs."+getSaving());
 				}
 			}
 		});
@@ -104,6 +115,7 @@ boolean changingDuration=false;
 		tvCurInterest=(TextView)findViewById(R.id.tvCurInterest);
 		tvCurInterest.setText("Rs." + MainActivity.mLoan.getTotalInterest());
 		tvNewInterest=(TextView)findViewById(R.id.tvNewInterest);
+		tvSaving=(TextView)findViewById(R.id.tvSavedInterest);
 		tvEMI=(TextView)findViewById(R.id.tvEMI);
 		tvPeriods=(TextView)findViewById(R.id.tvPeriods);
 		seekBarEMI=(SeekBar)findViewById(R.id.SeekBarEMI);
@@ -132,6 +144,10 @@ boolean changingDuration=false;
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
+	}
+	public long getSaving()
+	{
+		return MainActivity.mLoan.getTotalInterest()-adjustedLoan.getTotalInterest();
 	}
 
 }

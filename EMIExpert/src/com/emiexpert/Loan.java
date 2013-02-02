@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.emiexpert.PartPayment.PartPaymentType;
 
-public class Loan {
+public class Loan implements Cloneable{
 	private double mLoanInterest;
 	private long mLoanPrinciple;
 	private int mLoanDuration;
@@ -137,8 +137,10 @@ public class Loan {
 
 	public void setNewEMI(long newEMI)
 	{
-		// set new EMI here
-		mLoanDuration= (int) Utility.logOfBase(Utility.getRoundOfDouble(newEMI/(newEMI-mLoanPrinciple*sInterestComponent)),Utility.getRoundOfDouble(sInterestComponent+1) );
+		// set new EMI here  ;//,
+		double a=newEMI-mLoanPrinciple*sInterestComponent;
+		double b = newEMI/a;
+		mLoanDuration= (int)Utility.logOfBase(b, sInterestComponent+1.0);
 		mEmiMonths = new ArrayList<EmiMonth>();
 		mPartPayments= new ArrayList<PartPayment>();
 		setCurrEMI();
@@ -179,5 +181,8 @@ public class Loan {
 		}
 		return Utility.getRoundOfDouble(totalPaid);
 	}
+	protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
 }

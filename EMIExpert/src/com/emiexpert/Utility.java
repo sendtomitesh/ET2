@@ -21,7 +21,7 @@ public class Utility {
 		
 	}
 	
-	public static long logOfBase(long num,long base ) {
+	public static long logOfBase(double num,double base ) {
 	    return getRoundOfDouble(Math.log(num) / Math.log(base));
 	}
 
