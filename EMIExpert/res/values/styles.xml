@@ -17,11 +17,11 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 	<style name="btnsmall">
-	    <item name="android:background">@layout/smallbutton</item>
+	    <item name="android:background">@drawable/smallbutton</item>
 	    <item name="android:textColor">#D7FAFA</item>
 	</style>
 	<style name="btnorange">
-	    <item name="android:background">@layout/orangebutton</item>
+	    <item name="android:background">@drawable/orangebutton</item>
 	    <item name="android:textColor">#D7FAFA</item>
 	</style>
 	<style name="textsmall">
@@ -32,8 +32,8 @@
 	    <item name="android:textStyle">bold</item>
 	</style>
 	<style name="txtblue">
-	    <item name="android:background">@layout/textbluegradient</item>
-	    <item name="android:textSize">28dp</item>
+	    <item name="android:background">@drawable/textbluegradient</item>
+	    <item name="android:textSize">28sp</item>
 	    <item name="android:textColor">#ffffff</item>
 	    <item name="android:textDirection">rtl</item>
 	</style>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="main">#d9d9d9</color>
+	<color name="Grey">#DDDDDD</color>
+	<color name="floating_background">#98000000</color>
+</resources>

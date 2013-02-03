@@ -1,98 +1,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/main" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/home" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/calculator" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/info" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#ffffff"
-        android:padding="20dp" >
-
-        <Button
-            android:id="@+id/btnreset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:onClick="reset"
-            android:text="Reset" />
-
-        <TextView
-            android:id="@+id/tvnewinterest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView2"
-            android:layout_below="@+id/textView3"
-            android:text="Rs.XXXX"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
-            android:id="@+id/tvSavedInterest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvnewinterest"
-            android:layout_centerHorizontal="true"
-            android:text="You Save Rs.YYYY"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
-            android:id="@+id/tvCurInterest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/tvSavedInterest"
-            android:layout_alignLeft="@+id/textView1"
-            android:text="Rs.XXXX"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
-            android:id="@+id/tvPartPayments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/tvnewinterest"
-            android:layout_below="@+id/tvSavedInterest"
-            android:layout_marginTop="15dp"
-            android:text="AddPartPayments" />
-
-        <Button
-            android:id="@+id/btnEmailPayment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/btnReset"
-            android:layout_alignBottom="@+id/btnReset"
-            android:layout_alignParentRight="true"
-            android:text="Email Payment Chart" />
-
-        <ListView
-            android:id="@+id/lvMonthlyEMI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/btnReset"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/tvPartPayments"
-             >
-
-        </ListView>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/tvnewinterest"
-            android:layout_alignRight="@+id/lvMonthlyEMI"
-            android:layout_marginRight="36dp"
-            android:text="New Interest" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/tvCurInterest"
-            android:layout_alignLeft="@+id/lvMonthlyEMI"
-            android:text="Current Interest" />
+        android:layout_height="90dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/main_header"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
 
         <TextView
             android:id="@+id/textView3"
@@ -100,10 +48,101 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="13dp"
-            android:text="Interest"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:text="@string/interest"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:text="@string/currentinterest"
+            android:textColor="#2B4760"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dip"
+            android:text="@string/newinterest"
+            android:textColor="#2B4760"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvCurInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:background="@drawable/textbluegradient"
+            android:padding="3dp"
+            android:text="@string/rs"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvNewInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/btnemailpayment"
+            android:layout_below="@+id/textView2"
+            android:background="@drawable/textbluegradient"
+            android:padding="3dp"
+            android:text="@string/rs"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvSavedInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCurInterest"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/textbluegradient"
+            android:padding="3dp"
+            android:text="@string/rssaved"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="130dp"
+        >
+
+        <ListView
+            android:id="@+id/lvMonthlyEMI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="45dp"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="#708394"
+            android:dividerHeight="1dp"
+            tools:listitem="@layout/pp_list_item" />
+
+        <Button
+            android:id="@+id/btnreset"
+            style="@style/btnorange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="reset"
+            android:text="@string/reset" />
+
+        <Button
+            android:id="@+id/btnemailpayment"
+            style="@style/btnsmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/emailchart" />
     </RelativeLayout>
 
 </RelativeLayout>

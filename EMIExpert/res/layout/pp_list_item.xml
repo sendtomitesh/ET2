@@ -1,47 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="match_parent"
-    android:padding="5dp" >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main"
+    android:minHeight="60dp" >
 
     <TextView
         android:id="@+id/tvopeningbal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:text="OpeningBal" />
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:textColor="#2B4760"
+        android:text="1000000" />
 
     <TextView
-        android:id="@+id/tvemi"
+        android:id="@+id/tvMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvopeningbal"
-        android:layout_alignBottom="@+id/tvopeningbal"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/tvopeningbal"
-        android:text="EMI" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="7dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:background="@drawable/month_back_default"
+        
+        android:text="10" />
 
     <TextView
         android:id="@+id/tvInterestPaid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvemi"
-        android:layout_alignBottom="@+id/tvemi"
-        android:layout_toRightOf="@+id/tvemi"
-         android:layout_marginLeft="10dp"
-        android:text="Interest Paid" />
+        android:minWidth="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:textColor="#2B4760"
+        android:text="Int : 120" />
+
+    <TextView
+        android:id="@+id/tvemi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/tvInterestPaid"
+        android:textColor="#2B4760"
+        android:text="EMI : 1000" />
 
     <TextView
         android:id="@+id/tvPrincipalPaid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvInterestPaid"
-        android:layout_alignBottom="@+id/tvInterestPaid"
-        android:layout_toRightOf="@+id/tvInterestPaid"
-         android:layout_marginLeft="10dp"
-        android:text="Principal Paid" />
-	
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/tvemi"
+        android:textColor="#2B4760"
+        android:text="Pri : 2198" />
+
 </RelativeLayout>

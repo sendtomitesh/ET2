@@ -2,8 +2,6 @@ package com.emiexpert;
 
 import java.util.ArrayList;
 
-import android.util.Log;
-
 import com.emiexpert.PartPayment.PartPaymentType;
 
 public class Loan implements Cloneable{

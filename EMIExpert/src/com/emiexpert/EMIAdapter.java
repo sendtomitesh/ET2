@@ -44,19 +44,21 @@ public class EMIAdapter extends BaseAdapter{
 			holder.tvOpeningBal=(TextView)convertView.findViewById(R.id.tvopeningbal);
 			holder.tvInterestPaid=(TextView)convertView.findViewById(R.id.tvInterestPaid);
 			holder.tvPrincipalPaid=(TextView)convertView.findViewById(R.id.tvPrincipalPaid);
+			holder.tvMonth =(TextView)convertView.findViewById(R.id.tvMonth);
 			convertView.setTag(holder);
 		}else{
 			holder=(ViewHolder) convertView.getTag();
 		}	
-		holder.tvEMI.setText(String.valueOf(emimonths.get(position).getEmi()));		
-		holder.tvOpeningBal.setText(String.valueOf(emimonths.get(position).getOpeningBal()));
-		holder.tvInterestPaid.setText(String.valueOf(emimonths.get(position).getInterest()));
-		holder.tvPrincipalPaid.setText(String.valueOf(emimonths.get(position).getPrinciple()));
+		holder.tvEMI.setText("EMI: " +String.valueOf(emimonths.get(position).getEmi()));		
+		holder.tvOpeningBal.setText("Rs. " + String.valueOf(emimonths.get(position).getOpeningBal()));
+		holder.tvInterestPaid.setText("Int: Rs." + String.valueOf(emimonths.get(position).getInterest()));
+		holder.tvPrincipalPaid.setText("Pri: Rs." + String.valueOf(emimonths.get(position).getPrinciple()));
+		holder.tvMonth.setText(String.valueOf(position+1));
 		return convertView;
 	}
 
 	public class ViewHolder
 	{
-		TextView tvOpeningBal,tvEMI,tvInterestPaid,tvPrincipalPaid;
+		TextView tvOpeningBal,tvEMI,tvInterestPaid,tvPrincipalPaid,tvMonth;
 	}
 }

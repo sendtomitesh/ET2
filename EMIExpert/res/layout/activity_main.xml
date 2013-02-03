@@ -1,121 +1,192 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/main" >
 
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-        <!-- Header -->
+        android:layout_height="40dp" >
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/home" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/calculator" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/info" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#d9d9d9"
-        android:padding="20dp" >
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/main_header" >
 
-        <Button
-            android:id="@+id/btnActSmart"
-            style="@style/btnsmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:onClick="manageInterest"
-            android:text="@string/act" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="@string/principle" />
-
-        
-
-        <EditText android:id="@+id/text_principle" 
-            style="@style/txtblue"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content" 
-            android:layout_centerHorizontal="true" 
-            android:layout_below="@+id/textView1" 
-            android:ems="10" 
-            android:inputType="numberDecimal">
-
-            <requestFocus />
-        </EditText>
-        <EditText
-            android:id="@+id/text_duration"  
-            style="@style/txtblue"        
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/TextView02"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/TextView02"
-            android:ems="10"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/TextView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/text_principle"
-            android:text="@string/interest" />
-
-        <EditText
-            android:id="@+id/text_interest"
-            style="@style/txtblue"           
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/TextView01"
-            android:layout_below="@+id/TextView01"
-            android:ems="10"            
-            android:inputType="numberDecimal" />
-
-        <TextView
-            android:id="@+id/TextView02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/text_principle"
-            android:text="@string/duration" />
-
-        <TextView
-            android:id="@+id/text_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:text="@string/interestamt" />
-
-        <Button
-            android:id="@+id/btn_reset"
-            style="@style/btnorange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/text_interest"
+        <ImageView
+            android:id="@+id/main_logo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_centerVertical="true"
-            android:onClick="reset"
-            android:text="@string/reset" />
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/main_logo"
+            android:contentDescription="@string/app_name" />
 
-        <Button
-            android:id="@+id/button1"
-            style="@style/btnsmall"
+        <TextView
+            android:id="@+id/text_manage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:onClick="calculateInterest"
-            android:text="@string/go" />
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/main_logo"
+            android:text="@string/manage_home_loan"
+            android:textColor="#ff948a54"
+            android:textSize="17sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_manage"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/main_logo"
+            android:text="@string/act_smart"
+            android:textColor="#ffffffff"
+            android:textSize="32sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
-   </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="105dp"
+        android:layout_marginBottom="10dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="6dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/principle" />
+
+            <EditText
+                android:id="@+id/text_principle"
+                style="@style/txtblue"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:inputType="numberDecimal" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/text_duration"
+                style="@style/txtblue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/TextView02"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/TextView02"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_principle"
+                android:layout_marginTop="5dp"
+                android:text="@string/interest" />
+
+            <EditText
+                android:id="@+id/text_interest"
+                style="@style/txtblue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/TextView01"
+                android:layout_below="@+id/TextView01"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/text_principle"
+                android:layout_marginTop="5dp"
+                android:text="@string/duration" />
+
+            <Button
+                android:id="@+id/btn_reset"
+                style="@style/btnorange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/text_interest"
+                android:layout_marginTop="10dp"
+                android:onClick="reset"
+                android:text="@string/reset" />
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/btnsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/text_duration"
+                android:layout_marginTop="10dp"
+                android:onClick="calculateInterest"
+                android:text="@string/go" />
+
+            <TextView
+                android:id="@+id/text_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_reset"
+                android:layout_centerHorizontal="true"
+                
+                android:layout_marginTop="10dp"
+                android:text="@string/interestamt" />
+
+            <Button
+                android:id="@+id/btnActSmart"
+                style="@style/btnsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_result"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:onClick="manageInterest"
+                android:text="@string/act" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
