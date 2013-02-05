@@ -16,6 +16,18 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+   <style name="DialogWindowNoTitle" >
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.DialogWindowTitle</item>
+    </style>
+ 
+    <style name="NoTitleEMI" parent="@style/AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+    </style>
+    
 	<style name="btnsmall">
 	    <item name="android:background">@drawable/smallbutton</item>
 	    <item name="android:textColor">#D7FAFA</item>

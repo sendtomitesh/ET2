@@ -7,7 +7,8 @@
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="40dp" >
+        android:layout_height="40dp"
+        >
 
         <ImageButton
             android:layout_width="60dp"
@@ -15,6 +16,7 @@
             android:layout_alignParentLeft="true"
             android:background="@drawable/menu_item_selector"
             android:contentDescription="@string/app_name"
+            android:onClick="gotoHome"
             android:src="@drawable/home" />
 
         <ImageButton
@@ -23,6 +25,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/menu_item_selector"
             android:contentDescription="@string/app_name"
+            android:onClick="manageInterest"
             android:src="@drawable/calculator" />
 
         <ImageButton
@@ -31,12 +34,13 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/menu_item_selector"
             android:contentDescription="@string/app_name"
+            android:onClick="showInfo"
             android:src="@drawable/info" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/main_header"
         android:paddingLeft="10dp"
@@ -77,8 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
-            android:background="@drawable/textbluegradient"
-            android:padding="3dp"
+            android:background="@drawable/blue_back_right"
             android:text="@string/rs"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
@@ -90,8 +93,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignRight="@+id/btnemailpayment"
             android:layout_below="@+id/textView2"
-            android:background="@drawable/textbluegradient"
-            android:padding="3dp"
+            android:background="@drawable/blue_back_left"
             android:text="@string/rs"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
@@ -102,18 +104,17 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCurInterest"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/textbluegradient"
-            android:padding="3dp"
+            android:background="@drawable/blue_back"
             android:text="@string/rssaved"
             android:textColor="#FFFFFF"
-            android:textSize="15sp" />
+            android:layout_marginTop="2dp"
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="130dp"
-        >
+        android:layout_marginTop="140dp" >
 
         <ListView
             android:id="@+id/lvMonthlyEMI"

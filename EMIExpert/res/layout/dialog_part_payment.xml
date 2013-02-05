@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/floating_background"
+    android:gravity="center" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/main_header"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/text_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month : 11"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_part"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_month"
+            android:layout_marginTop="10dp"
+            android:text="@string/part_payment"
+            android:textColor="#2B4760"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_text_part"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignBaseline="@+id/text_part"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/text_part"
+            android:background="@drawable/textbluegradient"
+            android:inputType="numberDecimal"
+            android:minWidth="170dp"
+            android:textColor="#FFFFFF" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_part"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radio_emi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/keep_emi_constant"
+                android:textColor="#2B4760" />
+
+            <RadioButton
+                android:id="@+id/radio_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/keep_duration_constant"
+                android:textColor="#2B4760" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_remove"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/radio_group"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/smallbutton"
+            android:text="@string/remove"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/radio_group"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/smallbutton"
+            android:text="@string/add"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</RelativeLayout>

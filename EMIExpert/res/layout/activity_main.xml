@@ -23,6 +23,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/menu_item_selector"
             android:contentDescription="@string/app_name"
+            android:onClick="manageInterest"
             android:src="@drawable/calculator" />
 
         <ImageButton
@@ -31,6 +32,7 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/menu_item_selector"
             android:contentDescription="@string/app_name"
+            android:onClick="showInfo"
             android:src="@drawable/info" />
     </RelativeLayout>
 
@@ -166,6 +168,7 @@
                 android:onClick="calculateInterest"
                 android:text="@string/go" />
 
+            
             <TextView
                 android:id="@+id/text_result"
                 android:layout_width="wrap_content"

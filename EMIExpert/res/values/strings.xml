@@ -19,8 +19,13 @@
 	<string name="decimal">Decimal</string>
 	<string name="duration">Duration(Months)</string>
 	<string name="go">Go</string>
-	<string name="interestamt">On completion of your home loan, you pay a total of Rs. XXXX  of Interest.</string>
+	<string name="interestamt">On completion of your home loan, you pay a total interest of Rs. XXXX</string>
 	<string name="act">Now act smart!</string>
 	<string name="act_smart">Act Smart!</string>
 	<string name="manage_home_loan">Manage home loan</string>
+	<string name="part_payment">Part-payment</string>
+	<string name="keep_emi_constant">Keep EMI constant</string>
+	<string name="keep_duration_constant">Keep duration constant</string>
+	<string name="remove">Remove</string>
+	<string name="add">Add</string>
 </resources>

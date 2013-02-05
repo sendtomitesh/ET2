@@ -23,16 +23,7 @@ public class ManageInterestActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.manage_interest);
-
-		
-		// copying object to new object
-		try {
-			adjustedLoan = (Loan) MainActivity.mLoan.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		setLoan();
 		initializeGlobals();
 		setSeekbars();
 
@@ -109,6 +100,17 @@ public class ManageInterestActivity extends Activity {
 				});
 	}
 
+	private void setLoan() {
+		// copying object to new object
+		try {
+			adjustedLoan = null;
+			adjustedLoan = (Loan) MainActivity.mLoan.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	private void initializeGlobals() {
 		tvCurInterest = (TextView) findViewById(R.id.tvCurInterest);
 		tvCurInterest.setText("Rs." + MainActivity.mLoan.getTotalInterest());
@@ -120,16 +122,25 @@ public class ManageInterestActivity extends Activity {
 		seekBarEMI.setMax((int) adjustedLoan.getmLoanPrinciple() / 5);
 
 		seekBarPeriods = (SeekBar) findViewById(R.id.SeekBarPeriods);
-		
+
 	}
 
 	public void reset(View v) {
-		tvCurInterest.setText("Rs.0");
-		tvNewInterest.setText("Rs.0");
-		seekBarEMI.setProgress(0);
-		seekBarPeriods.setProgress(0);
-		tvEMI.setText("Adjust EMI");
-		tvPeriods.setText("Adjust Period");
+		setLoan();
+
+		tvNewInterest.setText(getResources().getString(R.string.rs));
+		tvSaving.setText(getResources().getString(R.string.rssaved));
+		seekBarEMI.setProgress((int) adjustedLoan.getCurrEMI());
+		seekBarPeriods.setProgress(adjustedLoan.getmLoanDuration());
+		tvEMI.setText("EMI :" + adjustedLoan.getCurrEMI());
+		tvPeriods.setText("Periods :" + adjustedLoan.getCurrDuration());
+
+	}
+
+	public void showInfo(View v) {
+		Intent intent = new Intent(this, InfoActivity.class);
+		startActivity(intent);
+		finish();
 	}
 
 	public void addPartpayment(View v) {
@@ -138,7 +149,14 @@ public class ManageInterestActivity extends Activity {
 				ManagePartPaymentActivity.class);
 		// myIntent.putExtra("curInterest",.getTotalInterest());
 		startActivity(myIntent);
+		finish();
 	}
+	
+	
+	public void gotoHome(View v) {
+		finish();
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -146,10 +164,21 @@ public class ManageInterestActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
-
-	public long getSaving() {
-		return MainActivity.mLoan.getTotalInterest()
-				- adjustedLoan.getTotalInterest();
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		finish();
+		super.onBackPressed();
 	}
+	public long getSaving() {
+		long saving = MainActivity.mLoan.getTotalInterest()
+				- adjustedLoan.getTotalInterest();
+		if (saving <= 0) {
+			saving = 0;
+		}
+		return saving;
+	}
+
+	
 
 }

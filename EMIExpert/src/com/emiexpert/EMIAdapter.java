@@ -54,6 +54,12 @@ public class EMIAdapter extends BaseAdapter{
 		holder.tvInterestPaid.setText("Int: Rs." + String.valueOf(emimonths.get(position).getInterest()));
 		holder.tvPrincipalPaid.setText("Pri: Rs." + String.valueOf(emimonths.get(position).getPrinciple()));
 		holder.tvMonth.setText(String.valueOf(position+1));
+		if (MainActivity.mLoan.isPartPaymentInthisMonth(position)) {
+			holder.tvMonth.setBackgroundResource(R.drawable.month_back_selected);
+		}
+		else{
+			holder.tvMonth.setBackgroundResource(R.drawable.month_back_default);
+		}
 		return convertView;
 	}
 

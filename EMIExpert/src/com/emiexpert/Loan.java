@@ -24,6 +24,18 @@ public class Loan implements Cloneable{
 		generateEmis();
 	}
 
+	public boolean isPartPaymentInthisMonth(int month)
+	{	
+		if(mPartPayments.size()>0)
+		{
+			for (int i = 0; i < mPartPayments.size(); i++) {
+				if(mPartPayments.get(i).getMonth()==month){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 	
 	public double getmLoanInterest() {
 		return mLoanInterest;
