@@ -7,9 +7,9 @@
 	<string name="currentinterest">Current</string>
 	<string name="reset">Reset</string>
 	<string name="newinterest">After adjustment</string>
-	<string name="rs">Rs.XXXX</string>
-	<string name="rssaved">You Saved Rs. YYYY</string>
-	<string name="interest">Interest Rate</string>
+	<string name="rs">Rs.0</string>
+	<string name="rssaved">You Saved Rs. 0</string>
+	<string name="interest">Interest you pay</string>
 	<string name="period">Adjust Months</string>
 	<string name="emi">Adjust EMI</string>
 	<string name="emiorperiod">EMI or DURATION</string>
@@ -28,4 +28,5 @@
 	<string name="keep_duration_constant">Keep duration constant</string>
 	<string name="remove">Remove</string>
 	<string name="add">Add</string>
+	<string name="txtper">%</string>
 </resources>

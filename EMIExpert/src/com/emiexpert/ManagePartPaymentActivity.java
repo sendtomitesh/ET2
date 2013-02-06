@@ -114,7 +114,7 @@ public class ManagePartPaymentActivity extends Activity {
 				.findViewById(R.id.text_month);
 		final EditText textPartPayment = (EditText) partPaymentDialog
 				.findViewById(R.id.edit_text_part);
-		textMonth.setText("Month : " + curMonth);
+		textMonth.setText("Add part payment for Month " + curMonth);
 		Button btnRemove = (Button) partPaymentDialog
 				.findViewById(R.id.btn_remove);
 		Button btnAdd = (Button) partPaymentDialog.findViewById(R.id.btn_add);

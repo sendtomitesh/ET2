@@ -60,7 +60,8 @@
             android:layout_toRightOf="@+id/main_logo"
             android:text="@string/manage_home_loan"
             android:textColor="#ff948a54"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -103,7 +104,8 @@
                 android:layout_below="@+id/textView1"
                 android:layout_centerHorizontal="true"
                 android:ems="10"
-                android:inputType="numberDecimal" >
+                android:inputType="numberDecimal" 
+                android:gravity="right">
 
                 <requestFocus />
             </EditText>
@@ -117,7 +119,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/TextView02"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:gravity="right" />
 
             <TextView
                 android:id="@+id/TextView01"
@@ -135,8 +138,18 @@
                 android:layout_alignRight="@+id/TextView01"
                 android:layout_below="@+id/TextView01"
                 android:ems="10"
-                android:inputType="numberDecimal" />
-
+                android:inputType="numberDecimal"
+                android:gravity="right" />
+            
+            <TextView
+                style="@style/txtblue"
+                android:id="@+id/textViewper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/text_interest"
+                android:layout_toRightOf="@+id/text_interest"
+                android:text="@string/txtper" />
+            
             <TextView
                 android:id="@+id/TextView02"
                 android:layout_width="wrap_content"
@@ -177,7 +190,7 @@
                 android:layout_centerHorizontal="true"
                 
                 android:layout_marginTop="10dp"
-                android:text="@string/interestamt" />
+                />
 
             <Button
                 android:id="@+id/btnActSmart"
@@ -189,6 +202,8 @@
                 android:layout_marginTop="20dp"
                 android:onClick="manageInterest"
                 android:text="@string/act" />
+
+           
         </RelativeLayout>
     </ScrollView>
 
