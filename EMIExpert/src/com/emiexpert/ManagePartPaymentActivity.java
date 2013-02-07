@@ -114,17 +114,25 @@ public class ManagePartPaymentActivity extends Activity {
 				.findViewById(R.id.text_month);
 		final EditText textPartPayment = (EditText) partPaymentDialog
 				.findViewById(R.id.edit_text_part);
-		textMonth.setText("Add part payment for Month " + curMonth);
+		textMonth.setText("Add part payment for month : " + curMonth);
 		Button btnRemove = (Button) partPaymentDialog
 				.findViewById(R.id.btn_remove);
 		Button btnAdd = (Button) partPaymentDialog.findViewById(R.id.btn_add);
-
+		Button btnCancel = (Button) partPaymentDialog.findViewById(R.id.btn_cancel);
 		final RadioButton radioEmi = (RadioButton) partPaymentDialog
 				.findViewById(R.id.radio_emi);
 		// final RadioButton radioDuration = (RadioButton) partPaymentDialog
 		// .findViewById(R.id.radio_duration);
 		radioEmi.setChecked(true);
 
+		btnCancel.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				partPaymentDialog.dismiss();
+
+			}
+		});
 		btnRemove.setOnClickListener(new OnClickListener() {
 
 			@Override

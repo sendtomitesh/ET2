@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnKeyListener;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,8 +67,8 @@ public class MainActivity extends Activity {
 					.toString());
 			mLoan = new Loan(principle, interest, duration);
 
-			String text = "On completion of your home loan, you pay a total interest of <font color=\"#E20F0F\">Rs. "
-					+ String.valueOf(mLoan.getTotalInterest()) + "</font>";
+			String text = "On completion of your home loan, you pay a total interest of <b><font color=\"#E20F0F\"> Rs. "
+					+ String.valueOf(mLoan.getTotalInterest()) + "</font></b>";
 			textResult.setText(Html.fromHtml(text),
 					TextView.BufferType.SPANNABLE);
 			// textResult

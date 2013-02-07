@@ -104,7 +104,9 @@
                 android:layout_below="@+id/textView1"
                 android:layout_centerHorizontal="true"
                 android:ems="10"
+                android:paddingRight="3dp"
                 android:inputType="numberDecimal" 
+                android:maxLength="12"
                 android:gravity="right">
 
                 <requestFocus />
@@ -119,6 +121,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/TextView02"
                 android:ems="10"
+                android:maxLength="3"
+                android:paddingRight="3dp"
                 android:inputType="number"
                 android:gravity="right" />
 
@@ -138,6 +142,7 @@
                 android:layout_alignRight="@+id/TextView01"
                 android:layout_below="@+id/TextView01"
                 android:ems="10"
+                android:paddingRight="3dp"
                 android:inputType="numberDecimal"
                 android:gravity="right" />
             

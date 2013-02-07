@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
-            android:background="@drawable/blue_back_right"
+            android:background="@drawable/blue_back"
             android:text="@string/rs"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
@@ -91,7 +91,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignRight="@+id/btnemailpayment"
             android:layout_below="@+id/textView2"
-            android:background="@drawable/blue_back_left"
+            android:background="@drawable/blue_back"
             android:text="@string/rs"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />

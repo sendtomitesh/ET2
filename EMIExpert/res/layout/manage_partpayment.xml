@@ -7,8 +7,7 @@
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        >
+        android:layout_height="40dp" >
 
         <ImageButton
             android:layout_width="60dp"
@@ -81,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
-            android:background="@drawable/blue_back_right"
+            android:background="@drawable/blue_back"
             android:text="@string/rs"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
@@ -93,7 +92,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignRight="@+id/btnemailpayment"
             android:layout_below="@+id/textView2"
-            android:background="@drawable/blue_back_left"
+            android:background="@drawable/blue_back"
             android:text="@string/rs"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
@@ -104,10 +103,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCurInterest"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
             android:background="@drawable/blue_back"
             android:text="@string/rssaved"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="2dp"
             android:textSize="14sp" />
     </RelativeLayout>
 
@@ -116,10 +115,37 @@
         android:layout_height="match_parent"
         android:layout_marginTop="140dp" >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@color/main"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/opening_principle"
+                android:textColor="#2B3846"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/interest_principle_emi"
+                android:textColor="#2B3846"
+                android:textSize="15sp" />
+        </LinearLayout>
+
         <ListView
             android:id="@+id/lvMonthlyEMI"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
             android:layout_marginBottom="45dp"
             android:cacheColorHint="@android:color/transparent"
             android:divider="#708394"
