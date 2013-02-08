@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="@string/interest"
+            android:text="@string/interestpay"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/interest_principle_emi"
+                android:text="@string/emi_interest_principle"
                 android:textColor="#2B3846"
                 android:textSize="15sp" />
         </LinearLayout>

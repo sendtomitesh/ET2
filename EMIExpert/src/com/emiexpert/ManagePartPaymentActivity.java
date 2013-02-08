@@ -105,7 +105,8 @@ public class ManagePartPaymentActivity extends Activity {
 	}
 
 	private void displayDialog(final int month) {
-		int curMonth = month + 1;
+		//int curMonth = month + 1;
+		int curMonth = month;
 		final Dialog partPaymentDialog = new Dialog(
 				ManagePartPaymentActivity.this, R.style.DialogWindowNoTitle);
 
@@ -121,16 +122,30 @@ public class ManagePartPaymentActivity extends Activity {
 		Button btnCancel = (Button) partPaymentDialog.findViewById(R.id.btn_cancel);
 		final RadioButton radioEmi = (RadioButton) partPaymentDialog
 				.findViewById(R.id.radio_emi);
-		// final RadioButton radioDuration = (RadioButton) partPaymentDialog
-		// .findViewById(R.id.radio_duration);
+		
+		final RadioButton radioDuration = (RadioButton) partPaymentDialog.findViewById(R.id.radio_duration);
 		radioEmi.setChecked(true);
+		//N
+		radioDuration.setChecked(false);
+		if(MainActivity.mLoan.isPartPaymentInthisMonth(curMonth))
+		{
+			textPartPayment.setText(String.valueOf(MainActivity.mLoan.getPartPaymentAmount(curMonth)));
+			if(MainActivity.mLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_DURATION)
+			{
+				radioEmi.setChecked(true);
+				
+			}else if(MainActivity.mLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_EMI)
+			{
+				radioDuration.setChecked(true);
+			}
+		}
+		//Nend
 
 		btnCancel.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				partPaymentDialog.dismiss();
-
 			}
 		});
 		btnRemove.setOnClickListener(new OnClickListener() {

@@ -28,23 +28,23 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvInterestPaid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:minWidth="50dp"
-        android:text="Int : 120"
-        android:textColor="#2B4760" />
-
-    <TextView
         android:id="@+id/tvemi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/tvInterestPaid"
         android:layout_marginRight="10dp"
         android:text="EMI : 1000"
+        android:textColor="#2B4760" />
+
+    <TextView
+        android:id="@+id/tvInterestPaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvemi"
+        android:layout_marginRight="10dp"
+        android:minWidth="50dp"
+        android:text="Int : 120"
         android:textColor="#2B4760" />
 
     <TextView
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/tvemi"
+        android:layout_below="@+id/tvInterestPaid"
         android:layout_marginRight="10dp"
         android:text="Pri : 2198"
         android:textColor="#2B4760" />

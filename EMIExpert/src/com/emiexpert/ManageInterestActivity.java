@@ -143,7 +143,7 @@ public class ManageInterestActivity extends Activity {
 		finish();
 	}
 
-	public void addPartpayment(View v) {
+	public void addPartpayments(View v) {
 		Intent myIntent = new Intent();
 		myIntent.setClass(ManageInterestActivity.this,
 				ManagePartPaymentActivity.class);

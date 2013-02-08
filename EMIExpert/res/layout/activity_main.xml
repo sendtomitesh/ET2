@@ -60,8 +60,7 @@
             android:layout_toRightOf="@+id/main_logo"
             android:text="@string/manage_home_loan"
             android:textColor="#ff948a54"
-            android:textSize="17sp"
-            />
+            android:textSize="17sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,10 +75,11 @@
     </RelativeLayout>
 
     <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="105dp"
-        android:layout_marginBottom="10dp" >
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="105dp" >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -104,10 +104,10 @@
                 android:layout_below="@+id/textView1"
                 android:layout_centerHorizontal="true"
                 android:ems="10"
-                android:paddingRight="3dp"
-                android:inputType="numberDecimal" 
+                android:gravity="right"
+                android:inputType="numberDecimal"
                 android:maxLength="12"
-                android:gravity="right">
+                android:paddingRight="3dp" >
 
                 <requestFocus />
             </EditText>
@@ -121,10 +121,10 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/TextView02"
                 android:ems="10"
-                android:maxLength="3"
-                android:paddingRight="3dp"
+                android:gravity="right"
                 android:inputType="number"
-                android:gravity="right" />
+                android:maxLength="3"
+                android:paddingRight="3dp" />
 
             <TextView
                 android:id="@+id/TextView01"
@@ -142,19 +142,19 @@
                 android:layout_alignRight="@+id/TextView01"
                 android:layout_below="@+id/TextView01"
                 android:ems="10"
-                android:paddingRight="3dp"
+                android:gravity="right"
                 android:inputType="numberDecimal"
-                android:gravity="right" />
-            
+                android:paddingRight="3dp" />
+
             <TextView
-                style="@style/txtblue"
                 android:id="@+id/textViewper"
+                style="@style/txtblue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/text_interest"
                 android:layout_toRightOf="@+id/text_interest"
                 android:text="@string/txtper" />
-            
+
             <TextView
                 android:id="@+id/TextView02"
                 android:layout_width="wrap_content"
@@ -186,30 +186,66 @@
                 android:onClick="calculateInterest"
                 android:text="@string/go" />
 
-            
             <TextView
                 android:id="@+id/text_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/btn_reset"
                 android:layout_centerHorizontal="true"
-                
-                android:layout_marginTop="10dp"
-                />
-
-            <Button
-                android:id="@+id/btnActSmart"
-                style="@style/btnsmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_result"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="20dp"
-                android:onClick="manageInterest"
-                android:text="@string/act" />
-
-           
-        </RelativeLayout>
-    </ScrollView>
-
+                android:layout_marginTop="10dp" />
+				
+			
+				<RelativeLayout
+                	    android:id="@+id/layout_item1"
+                	    android:layout_width="match_parent"
+                	    android:layout_height="wrap_content"                	   
+                	    android:layout_below="@+id/text_result"
+                	    android:background="#EEEEEE"    
+                	    android:orientation="vertical"
+                	    android:layout_marginTop="5dp"
+                	    android:onClick="manageInterest" >
+                	    <TextView
+                	        android:id="@+id/view_manage_interest"
+                	        style="@style/txtmenu"
+                	        android:layout_width="wrap_content"
+                	        android:layout_height="wrap_content"
+                	        android:layout_marginTop="10dp"
+                	        android:text="@string/emiorperiod"
+                	        />
+                	    <TextView
+                	        android:id="@+id/view_manage_interest_description"
+                	        android:layout_width="wrap_content"
+                	        android:layout_height="wrap_content"
+                	        android:layout_below="@+id/view_manage_interest"
+                	        android:layout_marginBottom="10dp"
+                	        android:text="@string/manage_interest_menu_desc" />
+				</RelativeLayout>	
+				<RelativeLayout
+                	    android:id="@+id/layout_item2"
+                	    android:layout_width="match_parent"
+                	    android:layout_height="wrap_content"
+                	  	android:background="#EEEEEE"    
+                	    android:orientation="vertical"
+                	    android:layout_below="@+id/layout_item1"
+                	    android:layout_marginTop="5dp"
+                	    android:onClick="addPartPayments"
+                	     >
+                	    <TextView
+                	        android:id="@+id/view_partpayment"
+                	        style="@style/txtmenu"
+                	        android:layout_width="wrap_content"
+                	        android:layout_height="wrap_content"
+                	        android:layout_marginTop="10dp"
+                	        android:text="@string/partpayment"
+                	        />
+                	    <TextView
+                	        android:id="@+id/view_partpayment_description"
+                	        android:layout_width="wrap_content"
+                	        android:layout_height="wrap_content"
+                	        android:layout_below="@+id/view_partpayment"
+                	        android:layout_marginBottom="10dp"
+                	        android:text="@string/partpayment_menu_desc" />
+				</RelativeLayout>
+        </RelativeLayout>            
+    </ScrollView>    
 </RelativeLayout>

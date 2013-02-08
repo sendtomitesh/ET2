@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="@string/interest"
+            android:text="@string/interestpay"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -102,10 +102,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCurInterest"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
             android:background="@drawable/blue_back"
             android:text="@string/rssaved"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="2dp"
             android:textSize="14sp" />
     </RelativeLayout>
 
@@ -169,15 +169,32 @@
                 android:max="360"
                 android:progress="25" />
 
-            <Button
-                android:id="@+id/btnPartPayment"
-                style="@style/btnsmall"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/layout_item2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:layout_below="@+id/SeekBarPeriods"
-                android:onClick="addPartpayment"
-                android:text="@string/partpayment" />
+                android:layout_marginTop="5dp"
+                android:background="#EEEEEE"
+                android:onClick="addPartPayments"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/view_partpayment"
+                    style="@style/txtmenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/partpayment" />
+
+                <TextView
+                    android:id="@+id/view_partpayment_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_partpayment"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/partpayment_menu_desc" />
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/btnreset"
@@ -185,8 +202,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/btnPartPayment"
-                android:layout_marginTop="15dp"
+                android:layout_below="@+id/layout_item2"
+                android:layout_marginTop="5dp"
                 android:onClick="reset"
                 android:text="@string/reset" />
 
@@ -196,8 +213,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="15dp"
-                android:layout_below="@+id/btnPartPayment"
+                android:layout_below="@+id/layout_item2"
+                android:layout_marginTop="5dp"
                 android:text="@string/emailchart" />
         </RelativeLayout>
     </ScrollView>

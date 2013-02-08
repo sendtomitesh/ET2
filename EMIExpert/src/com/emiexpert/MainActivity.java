@@ -75,8 +75,9 @@ public class MainActivity extends Activity {
 			// .setText("On completion of your home loan, you pay a total interest of Rs. "
 			// + String.valueOf(mLoan.getTotalInterest()));
 		} else {
-			Toast.makeText(MainActivity.this, "Please fill all data first",
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(MainActivity.this, "Please Calculate your current EMI.",
+					Toast.LENGTH_SHORT).show();			
+			textResult.setText("");
 		}
 	}
 
@@ -104,7 +105,18 @@ public class MainActivity extends Activity {
 					Toast.LENGTH_SHORT).show();
 		}
 	}
+	public void addPartPayments(View v) {
 
+		if (mLoan != null) {
+
+			Intent myIntent = new Intent(this, ManagePartPaymentActivity.class);
+			startActivity(myIntent);
+		} else {
+			Toast.makeText(MainActivity.this, "Please calculate loan first",
+					Toast.LENGTH_SHORT).show();
+		}
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

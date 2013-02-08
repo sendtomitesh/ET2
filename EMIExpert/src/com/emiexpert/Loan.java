@@ -2,6 +2,8 @@ package com.emiexpert;
 
 import java.util.ArrayList;
 
+import android.util.Log;
+
 import com.emiexpert.PartPayment.PartPaymentType;
 
 public class Loan implements Cloneable{
@@ -23,7 +25,7 @@ public class Loan implements Cloneable{
 		setCurrEMI();
 		generateEmis();
 	}
-
+	
 	public boolean isPartPaymentInthisMonth(int month)
 	{	
 		if(mPartPayments.size()>0)
@@ -35,6 +37,30 @@ public class Loan implements Cloneable{
 			}
 		}
 		return false;
+	}
+	//N
+	public double getPartPaymentAmount(int month)
+	{
+		for(int i=0;i<mPartPayments.size();i++)
+		{
+			if(mPartPayments.get(i).getMonth()==month)
+			{				
+				return mPartPayments.get(i).getAmount();
+			}			
+		}
+		return 0;		
+	}
+	//N
+	public PartPaymentType getPartPaymentType(int month)
+	{
+		for(int i=0;i<mPartPayments.size();i++)
+		{
+			if(mPartPayments.get(i).getMonth()==month)
+			{
+				return mPartPayments.get(i).getPaymentType();
+			}			
+		}
+		return null;		
 	}
 	
 	public double getmLoanInterest() {
@@ -50,8 +76,7 @@ public class Loan implements Cloneable{
 	}
 
 	private void setCurrEMI() {
-		// TODO Auto-generated method stub
-		
+			
 		double divider = 1200;
 		double emi = 0;
 		double i = mLoanInterest / divider;
@@ -97,8 +122,8 @@ public class Loan implements Cloneable{
 		{
 			//set values here
 			EmiMonth emiMonth;
-			long openingBal=Utility.getRoundOfDouble(mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount()) ; 
-			for(int i= partPayment.getMonth()-1;i<mLoanDuration;i++)
+			long openingBal=Utility.getRoundOfDouble(mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount()); 
+			for(int i= partPayment.getMonth();i<mLoanDuration;i++)
 			{
 				
 				emiMonth= new EmiMonth(openingBal, currEMI);
@@ -114,7 +139,7 @@ public class Loan implements Cloneable{
 			setCurrEMIForLessEMI(mLoanDuration-partPayment.getMonth());
 		//	double openingBal= mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount();
 			EmiMonth emiMonth;
-			for(int i= partPayment.getMonth()-1;i<mLoanDuration;i++)
+			for(int i= partPayment.getMonth();i<mLoanDuration;i++)
 			{
 				
 				emiMonth= new EmiMonth(openingBal, currEMI);

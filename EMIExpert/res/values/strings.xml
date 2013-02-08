@@ -5,21 +5,22 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
 	<string name="currentinterest">Current</string>
-	<string name="reset">Reset</string>
+	<string name="reset">RESET</string>
 	<string name="newinterest">After adjustment</string>
 	<string name="rs">Rs. 0</string>
-	<string name="rssaved">You Saved Rs. 0</string>
-	<string name="interest">Interest you pay</string>
+	<string name="rssaved">You Saved Rs. 0     </string>
+	<string name="interest">Interest Rate</string>
+	<string name="interestpay">Interest you pay</string>
 	<string name="period">Adjust Months</string>
 	<string name="emi">Adjust EMI</string>
-	<string name="emiorperiod">EMI or DURATION</string>
+	<string name="emiorperiod">Change EMI or DURATION</string>
 	<string name="emailchart">Email Payment Chart</string>
-	<string name="partpayment">Try Add Partpayment</string>
+	<string name="partpayment">Add Partpayments</string>
 	<string name="principle">Principle Amount</string>
 	<string name="decimal">Decimal</string>
 	<string name="duration">Duration(Months)</string>
 	<string name="go">Go</string>
-	<string name="interestamt">On completion of your home loan, you pay a total interest of Rs. XXXX</string>
+	<string name="interestamt">On completion of your home loan, you pay a total interest of Rs. XXXX,ACT NOW!!</string>
 	<string name="act">Now act smart!</string>
 	<string name="act_smart">Act Smart!</string>
 	<string name="manage_home_loan">Manage home loan</string>
@@ -30,6 +31,9 @@
 	<string name="add">Add</string>
 	<string name="cancel">Cancel</string>
 	<string name="opening_principle">Opening principle</string>
-	<string name="interest_principle_emi">Interest/Principle/EMI</string>
+	<string name="emi_interest_principle">EMI/Interest/Principle</string>
 	<string name="txtper">%</string>
+	<string name="partpayment_menu_desc">Reduce total interest payable by adding multiple part payments</string>
+	<string name="manage_interest_menu_desc">Reduce total interest payable by increasing EMI or lowering duration</string>
+	
 </resources>
