@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import android.util.Log;
 
 import com.emiexpert.PartPayment.PartPaymentType;
-//this is kalpesh change..
+
 public class Loan implements Cloneable{
 	private double mLoanInterest;
 	private long mLoanPrinciple;
