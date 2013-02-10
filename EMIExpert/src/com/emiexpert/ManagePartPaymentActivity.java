@@ -29,18 +29,17 @@ public class ManagePartPaymentActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.manage_partpayment);
-
 		initializeGlobals();
-
 		setLoan();
-
 	}
 
 	public void LoadLists() {
 
 		if (adjustedLoan.getAllEmis().size() > 0) {
+			adapter=null;
 			adapter = new EMIAdapter(getApplicationContext(),
 					adjustedLoan.getAllEmis());
+			lv.setAdapter(null);
 			lv.setAdapter(adapter);
 			lv.setOnItemClickListener(new OnItemClickListener() {
 
@@ -58,6 +57,7 @@ public class ManagePartPaymentActivity extends Activity {
 	private void setLoan() {
 		// copying object to new object
 		try {
+			adjustedLoan=null;
 			adjustedLoan = (Loan) MainActivity.mLoan.clone();
 			// adjustedLoan = MainActivity.mLoan;
 			LoadLists();
@@ -67,8 +67,7 @@ public class ManagePartPaymentActivity extends Activity {
 		}
 	}
 
-	private void initializeGlobals() {
-
+	private void initializeGlobals() {		
 		tvCurInterest = (TextView) findViewById(R.id.tvCurInterest);
 		currentInterest = MainActivity.mLoan.getTotalInterest();
 		tvCurInterest.setText("Rs." + currentInterest);
@@ -82,6 +81,7 @@ public class ManagePartPaymentActivity extends Activity {
 		setLoan();
 		tvNewInterest.setText(getResources().getString(R.string.rs));
 		tvSaving.setText(getResources().getString(R.string.rssaved));
+		
 	}
 
 	public void showInfo(View v) {
@@ -127,14 +127,14 @@ public class ManagePartPaymentActivity extends Activity {
 		radioEmi.setChecked(true);
 		//N
 		radioDuration.setChecked(false);
-		if(MainActivity.mLoan.isPartPaymentInthisMonth(curMonth))
+		if(adjustedLoan.isPartPaymentInthisMonth(curMonth))
 		{
-			textPartPayment.setText(String.valueOf(MainActivity.mLoan.getPartPaymentAmount(curMonth)));
-			if(MainActivity.mLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_DURATION)
+			textPartPayment.setText(String.valueOf(adjustedLoan.getPartPaymentAmount(curMonth)));
+			if(adjustedLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_DURATION)
 			{
 				radioEmi.setChecked(true);
 				
-			}else if(MainActivity.mLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_EMI)
+			}else if(adjustedLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_EMI)
 			{
 				radioDuration.setChecked(true);
 			}
@@ -149,7 +149,7 @@ public class ManagePartPaymentActivity extends Activity {
 			}
 		});
 		btnRemove.setOnClickListener(new OnClickListener() {
-
+			
 			@Override
 			public void onClick(View v) {
 				partPaymentDialog.dismiss();
@@ -198,6 +198,5 @@ public class ManagePartPaymentActivity extends Activity {
 			saving = 0;
 		}
 		return saving;
-
-	}
+	}	
 }

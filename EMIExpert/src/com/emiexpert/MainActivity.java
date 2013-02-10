@@ -28,11 +28,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				// TODO Auto-generated method stub
-				if (count%2==0)
-				{
-					
-				}
+				// TODO Auto-generated method stub			
 			}
 			
 			@Override
@@ -69,8 +65,9 @@ public class MainActivity extends Activity {
 
 			String text = "On completion of your home loan, you pay a total interest of <b><font color=\"#E20F0F\"> Rs. "
 					+ String.valueOf(mLoan.getTotalInterest()) + "</font></b>";
-			textResult.setText(Html.fromHtml(text),
-					TextView.BufferType.SPANNABLE);
+			textResult.setText(Html.fromHtml(text),			
+			TextView.BufferType.SPANNABLE);
+			textResult.setVisibility(1);
 			// textResult
 			// .setText("On completion of your home loan, you pay a total interest of Rs. "
 			// + String.valueOf(mLoan.getTotalInterest()));
@@ -83,7 +80,7 @@ public class MainActivity extends Activity {
 
 	public void reset(View v) {
 		mLoan = null;
-		textResult.setText(getResources().getString(R.string.interestamt));
+		textResult.setText("");
 		textDuration.setText("");
 		textInterest.setText("");
 		textPrinciple.setText("");

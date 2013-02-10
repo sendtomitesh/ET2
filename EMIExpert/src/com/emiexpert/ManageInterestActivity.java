@@ -120,10 +120,10 @@ public class ManageInterestActivity extends Activity {
 		tvPeriods = (TextView) findViewById(R.id.tvPeriods);
 		seekBarEMI = (SeekBar) findViewById(R.id.SeekBarEMI);
 		seekBarEMI.setMax((int) adjustedLoan.getmLoanPrinciple() / 5);
-
 		seekBarPeriods = (SeekBar) findViewById(R.id.SeekBarPeriods);
-
+		seekBarPeriods.setMax((int) MainActivity.mLoan.getmLoanDuration()+48);
 	}
+	
 
 	public void reset(View v) {
 		setLoan();
@@ -178,7 +178,5 @@ public class ManageInterestActivity extends Activity {
 		}
 		return saving;
 	}
-
-	
-
 }
+

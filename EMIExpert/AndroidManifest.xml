@@ -17,6 +17,14 @@
             android:name="com.emiexpert.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:theme="@style/NoTitleEMI"            
+            >          
+            
+        </activity>
+        <activity
+            android:name="com.emiexpert.Splashscreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/NoTitleEMI" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

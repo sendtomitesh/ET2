@@ -20,7 +20,7 @@
 	<string name="decimal">Decimal</string>
 	<string name="duration">Duration(Months)</string>
 	<string name="go">Go</string>
-	<string name="interestamt">On completion of your home loan, you pay a total interest of Rs. XXXX,ACT NOW!!</string>
+	<string name="interestamt">On completion of your home loan, you pay a total interest of Rs. 0,ACT NOW!!</string>
 	<string name="act">Now act smart!</string>
 	<string name="act_smart">Act Smart!</string>
 	<string name="manage_home_loan">Manage home loan</string>

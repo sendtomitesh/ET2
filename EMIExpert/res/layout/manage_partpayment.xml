@@ -145,8 +145,8 @@
             android:id="@+id/lvMonthlyEMI"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="35dp"
             android:layout_marginBottom="45dp"
+            android:layout_marginTop="35dp"
             android:cacheColorHint="@android:color/transparent"
             android:divider="#708394"
             android:dividerHeight="1dp"
@@ -164,12 +164,12 @@
 
         <Button
             android:id="@+id/btnemailpayment"
-            style="@style/btnsmall"
+            style="@style/btnemail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:text="@string/emailchart" />
+            />
     </RelativeLayout>
 
 </RelativeLayout>

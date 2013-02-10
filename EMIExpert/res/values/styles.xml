@@ -32,9 +32,17 @@
 	    <item name="android:background">@drawable/smallbutton</item>
 	    <item name="android:textColor">#D7FAFA</item>
 	</style>
+	<style name="btnemail">
+	    <item name="android:background">@drawable/email</item>
+	    <item name="android:textColor">#D7FAFA</item>
+	</style>
 	<style name="btnorange">
 	    <item name="android:background">@drawable/orangebutton</item>
 	    <item name="android:textColor">#D7FAFA</item>
+	</style>
+	<style name="textresult">
+	    <item name="android:background">@drawable/textresult</item>
+	    <item name="android:textColor">#655555</item>
 	</style>
 	<style name="textsmall">
 	    <item name="android:textColor">#0CC5DD</item>
@@ -54,4 +62,7 @@
 	<item name="android:textStyle">bold</item>
 	<item name="android:textColor">#595959</item>
 	</style>
+	<style name="splashtheme">
+	    <item name="android:background">@drawable/splashscreen2</item>
+  	</style>
 </resources>

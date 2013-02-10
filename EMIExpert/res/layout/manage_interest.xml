@@ -176,7 +176,7 @@
                 android:layout_below="@+id/SeekBarPeriods"
                 android:layout_marginTop="5dp"
                 android:background="#EEEEEE"
-                android:onClick="addPartPayments"
+                android:onClick="addPartpayments"
                 android:orientation="vertical" >
 
                 <TextView
@@ -209,13 +209,14 @@
 
             <Button
                 android:id="@+id/btnemailpayment"
-                style="@style/btnsmall"
+                style="@style/btnemail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/layout_item2"
                 android:layout_marginTop="5dp"
-                android:text="@string/emailchart" />
+                android:text="@string/emailchart"
+                 />
         </RelativeLayout>
     </ScrollView>
 
