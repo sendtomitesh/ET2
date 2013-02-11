@@ -48,7 +48,6 @@ public class ManagePartPaymentActivity extends Activity {
 						int position, long id) {
 					// TODO Auto-generated method stub
 					displayDialog(position);
-
 				}
 			});
 		}
@@ -73,7 +72,7 @@ public class ManagePartPaymentActivity extends Activity {
 		tvCurInterest.setText("Rs." + currentInterest);
 		tvNewInterest = (TextView) findViewById(R.id.tvNewInterest);
 		tvSaving = (TextView) findViewById(R.id.tvSavedInterest);
-
+		
 		lv = (ListView) findViewById(R.id.lvMonthlyEMI);
 	}
 

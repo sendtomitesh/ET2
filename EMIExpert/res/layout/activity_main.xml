@@ -105,13 +105,15 @@
                 android:layout_centerHorizontal="true"
                 android:ems="10"
                 android:gravity="right"
-                android:inputType="numberDecimal"
+                android:digits="0123456789,"
                 android:maxLength="12"
-                android:paddingRight="3dp" >
+                android:paddingRight="3dp"
+                >
+                
+                <requestFocus  />
 
-                <requestFocus />
             </EditText>
-
+			
             <EditText
                 android:id="@+id/text_duration"
                 style="@style/txtblue"
@@ -198,11 +200,12 @@
 				
 			
 				<RelativeLayout
+				    	style="@style/txtmenu"
 				        android:id="@+id/layout_item1"
                 	    android:layout_width="match_parent"
                 	    android:layout_height="wrap_content"                	   
                 	    android:layout_below="@+id/text_result"
-                	    android:background="#EEEEEE"    
+                	    android:background="@drawable/textresult"    
                 	    android:orientation="vertical"
                 	    android:layout_marginTop="5dp"
                 	    android:onClick="manageInterest" >
@@ -226,15 +229,16 @@
                 	    android:id="@+id/layout_item2"
                 	    android:layout_width="match_parent"
                 	    android:layout_height="wrap_content"
-                	  	android:background="#EEEEEE"    
+                	  	 
                 	    android:orientation="vertical"
                 	    android:layout_below="@+id/layout_item1"
                 	    android:layout_marginTop="5dp"
                 	    android:onClick="addPartPayments"
+                	    android:background="@drawable/textresult"
                 	     >
                 	    <TextView
                 	        android:id="@+id/view_partpayment"
-                	        style="@style/txtmenu"
+                	    	style="@style/txtmenu"    
                 	        android:layout_width="wrap_content"
                 	        android:layout_height="wrap_content"
                 	        android:layout_marginTop="10dp"

@@ -13,7 +13,18 @@
         android:layout_marginLeft="10dp"
         android:text="1000000"
         android:textColor="#2B4760" />
-
+    
+    <TextView
+        android:id="@+id/tvYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/tvMonth"
+    	android:text="9Y"       
+    	android:background="#CBC3C3"
+    	android:textColor="#ffffff"     
+        />
+    
     <TextView
         android:id="@+id/tvMonth"
         android:layout_width="40dp"
@@ -26,7 +37,17 @@
         android:text="999"
         android:textColor="#ffffff"
         android:textStyle="bold" />
-
+<TextView
+        android:id="@+id/tvMonthofYear"
+        android:paddingLeft="1dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CBC3C3"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/tvMonth"
+        android:textColor="#ffffff"
+    	android:text="99M"            
+        />
     <TextView
         android:id="@+id/tvemi"
         android:layout_width="wrap_content"
