@@ -104,8 +104,8 @@ public class ManagePartPaymentActivity extends Activity {
 	}
 
 	private void displayDialog(final int month) {
-		//int curMonth = month + 1;
-		int curMonth = month;
+		int curMonth = month + 1;
+		//int curMonth = month;
 		final Dialog partPaymentDialog = new Dialog(
 				ManagePartPaymentActivity.this, R.style.DialogWindowNoTitle);
 
@@ -129,11 +129,11 @@ public class ManagePartPaymentActivity extends Activity {
 		if(adjustedLoan.isPartPaymentInthisMonth(curMonth))
 		{
 			textPartPayment.setText(String.valueOf(adjustedLoan.getPartPaymentAmount(curMonth)));
-			if(adjustedLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_DURATION)
+			if(adjustedLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_EMI)
 			{
 				radioEmi.setChecked(true);
 				
-			}else if(adjustedLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_EMI)
+			}else if(adjustedLoan.getPartPaymentType(curMonth)==PartPaymentType.LESS_DURATION)
 			{
 				radioDuration.setChecked(true);
 			}
@@ -179,7 +179,6 @@ public class ManagePartPaymentActivity extends Activity {
 			}
 		});
 		partPaymentDialog.show();
-
 	}
 
 	private void addPartPayment(int month, double amount, PartPaymentType type) {

@@ -1,0 +1,222 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:onClick="gotoHome"
+            android:src="@drawable/home" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/calculator" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/menu_item_selector"
+            android:contentDescription="@string/app_name"
+            android:onClick="showInfo"
+            android:src="@drawable/info" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/main_header"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/interestpay"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:text="@string/currentinterest"
+            android:textColor="#2B4760"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dip"
+            android:text="@string/newinterest"
+            android:textColor="#2B4760"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvCurInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:background="@drawable/blue_back"
+            android:text="@string/rs"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvNewInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/btnemailpayment"
+            android:layout_below="@+id/textView2"
+            android:background="@drawable/blue_back"
+            android:text="@string/rs"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvSavedInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCurInterest"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/blue_back"
+            android:text="@string/rssaved"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="140dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="6dp" >
+
+            <TextView
+                android:id="@+id/tvEmiorPeriods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSavedInterest"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="@string/emiorperiod" />
+
+            <TextView
+                android:id="@+id/tvEMI"
+                style="@style/textsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEmiorPeriods"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/emi" />
+
+            <SeekBar
+                android:id="@+id/SeekBarEMI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvEMI"
+                android:max="100"
+                android:progress="5" />
+
+            <TextView
+                android:id="@+id/tvPeriods"
+                style="@style/textsmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SeekBarEMI"
+                android:layout_centerHorizontal="true"
+                android:text="@string/period" />
+
+            <SeekBar
+                android:id="@+id/SeekBarPeriods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvPeriods"
+                android:max="360"
+                android:progress="25" />
+
+            <RelativeLayout
+                android:id="@+id/layout_item2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SeekBarPeriods"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/textresult"
+                android:onClick="addPartpayments"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/view_partpayment"
+                    style="@style/txtmenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/partpayment" />
+
+                <TextView
+                    android:id="@+id/view_partpayment_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_partpayment"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/partpayment_menu_desc" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnreset"
+                style="@style/btnorange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/layout_item2"
+                android:layout_marginTop="5dp"
+                android:onClick="reset"
+                android:text="@string/reset" />
+
+            <Button
+                android:id="@+id/btnemailpayment"
+                style="@style/btnemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/layout_item2"
+                android:layout_marginTop="5dp"               
+                 />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -140,13 +140,11 @@ public class Loan implements Cloneable{
 		//	double openingBal= mEmiMonths.get(partPayment.getMonth()-1).getOpeningBal()-partPayment.getAmount();
 			EmiMonth emiMonth;
 			for(int i= partPayment.getMonth();i<mLoanDuration;i++)
-			{
-				
+			{				
 				emiMonth= new EmiMonth(openingBal, currEMI);
 				openingBal = emiMonth.getClosingPrinciple();
 				mEmiMonths.set(i, emiMonth);
-			}
-			
+			}			
 		}
 		mPartPayments.add(partPayment);
 	}
@@ -216,7 +214,7 @@ public class Loan implements Cloneable{
 		}
 		return Utility.getRoundOfDouble(totalPaid);
 	}
-	protected Object clone() throws CloneNotSupportedException {
+	protected Object clone() throws CloneNotSupportedException {		
         return super.clone();
     }
 

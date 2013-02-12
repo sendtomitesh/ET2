@@ -2,8 +2,6 @@ package com.emiexpert;
 
 import java.text.NumberFormat;
 
-import junit.framework.TestResult;
-import android.R.integer;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -11,13 +9,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
-import android.text.method.KeyListener;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnKeyListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,8 +19,7 @@ public class MainActivity extends Activity {
 
 	private EditText textPrinciple, textInterest, textDuration;
 	private TextView textResult;
-	public static Loan mLoan;
-	private String temp;
+	public static Loan mLoan;	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +42,7 @@ public class MainActivity extends Activity {
 				&& textInterest.getText().toString().length() > 0
 				&& textPrinciple.getText().toString().length() > 0) {
 			int duration = Integer.parseInt(textDuration.getText().toString());
-			long principle = Long.parseLong(textPrinciple.getText().toString());
+			long principle = Long.parseLong(textPrinciple.getText().toString().replace(",", ""));
 			double interest = Double.parseDouble(textInterest.getText()
 					.toString());
 			mLoan = new Loan(principle, interest, duration);
@@ -62,11 +54,6 @@ public class MainActivity extends Activity {
 					TextView.BufferType.SPANNABLE);
 			textResult.setVisibility(1);
 
-			// textResult
-			// .setText("On completion of your home loan, you pay a total interest of Rs. "
-			// + String.valueOf(mLoan.getTotalInterest()));
-
-			// view alert
 			text = "On completion of your home loan, you pay a total of Rs. "
 					+ String.valueOf(mLoan.getTotalInterest())
 					+ " interest, ACT NOW!! ";
@@ -74,7 +61,7 @@ public class MainActivity extends Activity {
 			popupAlert.setMessage(text);
 			popupAlert.setTitle(R.string.app_name);
 			popupAlert.setPositiveButton("Ok", null);
-			popupAlert.setCancelable(true);
+			popupAlert.setCancelable(true);			
 			popupAlert.create().show();
 		} else {
 			Toast.makeText(MainActivity.this,

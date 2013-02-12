@@ -40,8 +40,39 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/emiexpertheader" >
-		    </RelativeLayout>
+        android:background="@drawable/main_header" >
+
+        <ImageView
+            android:id="@+id/main_logo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/main_logo"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/text_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/main_logo"
+            android:text="@string/manage_home_loan"
+            android:textColor="#ff948a54"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_manage"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/main_logo"
+            android:text="@string/act_smart"
+            android:textColor="#ffffffff"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -76,13 +107,11 @@
                 android:gravity="right"
                 android:digits="0123456789,"
                 android:maxLength="12"
-                android:paddingRight="3dp"
-                >
-                
-                <requestFocus  />
+                android:paddingRight="3dp" >
 
+                <requestFocus />
             </EditText>
-			
+
             <EditText
                 android:id="@+id/text_duration"
                 style="@style/txtblue"

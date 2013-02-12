@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main"
+    android:minHeight="60dp" >
+
+    <TextView
+        android:id="@+id/tvopeningbal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="1000000"
+        android:textColor="#2B4760" />
+
+    <TextView
+        android:id="@+id/tvMonth"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/month_back_default"
+        android:padding="8dp"
+        android:text="999"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvemi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="EMI : 1000"
+        android:textColor="#2B4760" />
+
+    <TextView
+        android:id="@+id/tvInterestPaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvemi"
+        android:layout_marginRight="10dp"
+        android:minWidth="50dp"
+        android:text="Int : 120"
+        android:textColor="#2B4760" />
+
+    <TextView
+        android:id="@+id/tvPrincipalPaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvInterestPaid"
+        android:layout_marginRight="10dp"
+        android:text="Pri : 2198"
+        android:textColor="#2B4760" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="#000000" >
+    </LinearLayout>
+
+</RelativeLayout>
